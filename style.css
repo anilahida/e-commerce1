@@ -48,3 +48,10 @@ position: relative;
     width: 120px;
     height: auto;
 }
+
+#hero{
+    background-image: url("serum.jpg");
+    height: 90vh;
+    width: 100%;
+
+}
