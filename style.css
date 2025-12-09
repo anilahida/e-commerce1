@@ -1,0 +1,23 @@
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  padding: 20px 80px;
+  background-color: #e3e6f3;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.06)
+
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#navbar li{
+list-style: none;
+padding: 0 20px;
+}
+#header .logo{
+    width: 120px;
+    height: auto;
+}
