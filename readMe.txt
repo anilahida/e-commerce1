@@ -1,1 +1,1 @@
-Linku i gitthttps://github.com/anilahida/e-commerce1
+Linku i git https://github.com/anilahida/e-commerce1
