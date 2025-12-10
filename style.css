@@ -103,7 +103,7 @@ a:hover {
 }
  
 #hero button{
-    background-color: cadetblue;
+    background-color: rgb(133, 115, 131);
     color: white;
     padding: 12px 28px;
     font-size: 16px;
@@ -304,7 +304,7 @@ button.black{
 }
 
 #banner button:hover{
-    background: cadetblue;
+    background: rgb(133, 115, 131);
     color: white;
 }
 
@@ -382,10 +382,10 @@ border: 1px solid white;
 }
 
 #banner3 .banner-box {
+    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     background-image: url("fenty.webp");
     min-width: 30%;
     height: 30vh;
@@ -403,18 +403,20 @@ border: 1px solid white;
     background-image: url("rhode.avif");
 }
 
+#banner3 .banner-box.banner-box2 h2 {
+    color: white !important;
+}
 
-
-#banner3 h2{
-    color: black;
-    font-size: 900;
-    font-size: 22px;
-    justify-content: center;
-    
+#banner3 h2 {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    z-index: 2;
+    position: absolute;
 }
 
 #banner3 h3{
-    color: black;
+    color: rgb(0, 0, 0);
     font-size: 800;
     font-size: 25px;
 }
@@ -424,22 +426,23 @@ border: 1px solid white;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    background-image: url("vjollce.jpg");
+    
+    width: 100%;
     background-repeat: no-repeat;
     background-position: 20% 30%;
-    background-color: #1a1a1a;
+    background-color: rgb(133, 115, 131);
 }
 
 #newsletter h4{
     font-size: 22px;
     font-weight: 700;
-    color: white;
+    color: rgb(6, 6, 6);
 }
 
 #newsletter p{
     font-size: 14px;
     font-weight: 600;
-    color: gray;
+    color: rgb(255, 255, 255);
 }
 
 #newsletter p span{
@@ -504,7 +507,7 @@ footer{
     margin-top: 20px;
  }
  footer .follow i{
-     color: plum;
+     color: rgb(133, 115, 131);
      padding-right: 4px;
      cursor: pointer;
  }
