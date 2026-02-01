@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faleminderit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #checkout-success { text-align: center; padding: 60px 20px; max-width: 500px; margin: 0 auto; }
+        #checkout-success i { font-size: 64px; color: #3c7f84; margin-bottom: 20px; }
+        #checkout-success h2 { margin-bottom: 15px; }
+        #checkout-success p { color: #666; margin-bottom: 25px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="./images/skincare/logoja.jpg" class="logo" alt="Logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><i id="close" class="fas fa-times" aria-hidden="true"></i></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="collection.html">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">Rreth nesh</a></li>
+                <li><a href="login.html" class="btn-header">Login</a></li>
+                <li><a href="cart.html" class="btn-header"><i class="fa-solid fa-basket-shopping"></i><span id="cart-count" class="cart-count">0</span></a></li>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-basket-shopping"></i><span id="cart-count-mob" class="cart-count">0</span></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="page-header">
+        <h2>Faleminderit</h2>
+        <p>Porosia u dergua</p>
+    </section>
+
+    <section id="checkout-success" class="section-p1">
+        <i class="fas fa-check-circle"></i>
+        <h2>Gati!</h2>
+        <p>Porosia u regjistrua. Do te te njoftojme kur ta dergojme.</p>
+        <a href="collection.html"><button type="button" class="normal">Kthehu te shopi</button></a>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="./images/skincare/Logo2.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Adresa:</strong> Rruga Garibaldi nr 18</p>
+            <p><strong>Tel:</strong> +383 49 631 638</p>
+        </div>
+        <div class="col">
+            <h4>Lidhje</h4>
+            <a href="about.html">Rreth nesh</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div class="copyright">
+            <p>© 2025, Anilë Hida & Neala Havolli</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+    (function() {
+        var cart = localStorage.getItem('cart');
+        if (cart && JSON.parse(cart).length > 0) {
+            localStorage.setItem('cart', '[]');
+            if (typeof updateCartCount === 'function') updateCartCount();
+        }
+        var c = document.getElementById('cart-count');
+        var cm = document.getElementById('cart-count-mob');
+        if (c) c.textContent = '0';
+        if (cm) cm.textContent = '0';
+    })();
+    </script>
+</body>
+</html>

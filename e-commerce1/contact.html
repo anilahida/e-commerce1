@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="./images/skincare/logoja.jpg" class="logo" alt="Logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><i id="close" class="fas fa-times" aria-hidden="true"></i></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#product1">Shop</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+                <li><a href="about.html">Rreth nesh</a></li>
+                <li><a href="login.html" class="btn-header">Login</a></li>
+                <li><a href="cart.html" class="btn-header"><i class="fa-solid fa-basket-shopping"></i><span id="cart-count" class="cart-count">0</span></a></li>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-basket-shopping"></i><span id="cart-count-mob" class="cart-count">0</span></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="page-header" class="contact-header">
+        <h2>Na kontaktoni</h2>
+        <p>Na lini një mesazh – jemi këtu për ju</p>
+    </section>
+
+    <section id="contact-details" class="section-p1">
+        <div class="details">
+            <span>INFO</span>
+            <h2>Ku jemi</h2>
+            <h3>Adresa</h3>
+            <ul class="contact-list">
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Rruga Garibaldi nr 18</p>
+                </li>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <p>info@eshop.example.com</p>
+                </li>
+                <li>
+                    <i class="fas fa-phone-alt"></i>
+                    <p>+383 49 631 638</p>
+                </li>
+                <li>
+                    <i class="fas fa-clock"></i>
+                    <p>Hënë - Shtunë: 10:00 - 18:00</p>
+                </li>
+            </ul>
+        </div>
+        <div class="form-details">
+            <form id="contact-form" action="#" method="post">
+                <span>MESAZH</span>
+                <h2>Forma e kontaktit</h2>
+                <input type="text" id="contact-name" name="name" placeholder="Emri dhe mbiemri juaj" required>
+                <span class="error-msg" id="contact-name-error"></span>
+                <input type="email" id="contact-email" name="email" placeholder="Email juaj" required>
+                <span class="error-msg" id="contact-email-error"></span>
+                <input type="text" id="contact-subject" name="subject" placeholder="Subjekti">
+                <textarea id="contact-message" name="message" cols="30" rows="10" placeholder="Mesazhi juaj" required></textarea>
+                <span class="error-msg" id="contact-message-error"></span>
+                <button type="submit" class="normal">Dërgo</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="./images/skincare/Logo2.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Adresa:</strong> Rruga Garibaldi nr 18</p>
+            <p><strong>Orari:</strong> 10:00 - 18:00, Hënë - Shtunë</p>
+            <p><strong>Tel:</strong> +383 49 631 638 / +383 43 997 503</p>
+            <div class="follow">
+                <h4>Na ndiqni</h4>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                    <i class="fa-brands fa-pinterest"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>Rreth nesh</h4>
+            <a href="about.html">Rreth nesh</a>
+            <a href="#">Informacione dorëzimi</a>
+            <a href="#">Politika e privatësisë</a>
+            <a href="contact.html">Na kontaktoni</a>
+        </div>
+        <div class="col">
+            <h4>Llogaria ime</h4>
+            <a href="login.html">Hyr</a>
+            <a href="#">Shporta</a>
+            <a href="contact.html">Ndihmë</a>
+        </div>
+        <div class="col install">
+            <h4>Shkarkoni aplikacionin</h4>
+            <div class="row">
+                <img src="./images/skincare/Apple google.png" alt="">
+            </div>
+            <img src="./images/skincare/Visamastercard.png" alt="">
+        </div>
+        <div class="copyright">
+            <p>© 2025, Anilë Hida & Neala Havolli - HTML CSS</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
