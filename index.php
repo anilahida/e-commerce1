@@ -1,4 +1,9 @@
 <?php
+// Sigurohemi që sesioni është i nisur për të lexuar shportën
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 require_once __DIR__ . '/includes/init.php';
 $currentPage = 'home';
 $page = $pageModel->getBySlug('home');
@@ -6,10 +11,11 @@ $products = $productModel->getAll();
 $baseUrl = '';
 require_once __DIR__ . '/includes/header.php';
 
-$heroTitle = 'Oferte Mujore';
+// Përcaktojmë titullin që dëshirojmë ne
+$heroTitle = 'Oferte Mujore'; 
 $heroSub = 'Shiko me shume & deri ne 70% zbritje';
+
 if ($page) {
-    $heroTitle = $page['title'];
     $heroSub = strip_tags($page['content']);
 }
 ?>
@@ -52,23 +58,33 @@ if ($page) {
     <h1>Produktet</h1>
     <p>Koleksioni me i ri</p>
     <div class="pro-container">
-        <?php foreach (array_slice($products, 0, 8) as $p): ?>
-        <div class="pro" data-pro-name="<?php echo h($p['title']); ?>" data-pro-price="<?php echo h($p['price']); ?>" data-pro-img="<?php echo h($p['image_path'] ?? ''); ?>">
-            <img src="<?php echo h($p['image_path'] ?? 'images/skincare/skincare1.webp'); ?>" alt="">
-            <div class="des">
-                <span><?php echo h($p['title']); ?></span>
-                <h5><?php echo h($p['description'] ?? $p['title']); ?></h5>
-                <div class="star">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <?php if (!empty($products)): ?>
+            <?php foreach (array_slice($products, 0, 8) as $p): ?>
+            <div class="pro">
+                <a href="product-detail.php?id=<?php echo (int)$p['id']; ?>">
+                    <img src="<?php echo h($p['image_path'] ?? 'images/skincare/skincare1.webp'); ?>" alt="">
+                </a>
+                
+                <div class="des">
+                    <span><?php echo h($p['title']); ?></span>
+                    <h5><?php echo h($p['description'] ?? $p['title']); ?></h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <h4><?php echo number_format((float)$p['price'], 2); ?>€</h4>
                 </div>
-                <h4><?php echo number_format((float)$p['price'], 2); ?>€</h4>
+
+                <a href="add-to-cart.php?id=<?php echo (int)$p['id']; ?>" class="add-cart">
+                    <i class="fa-solid fa-cart-shopping cart"></i>
+                </a>
+                
+                <a href="product-detail.php?id=<?php echo (int)$p['id']; ?>" class="pro-link" style="display: block; margin-top: 10px; text-decoration: none; color: #088178; font-size: 13px; font-weight: 600;">
+                    Shiko detajet
+                </a>
             </div>
-            <a href="javascript:void(0)" class="add-cart"><i class="fa-solid fa-cart-shopping cart"></i></a>
-            <a href="product-detail.php?id=<?php echo (int)$p['id']; ?>" class="pro-link">Shiko detajet</a>
-        </div>
-        <?php endforeach; ?>
-        <?php if (empty($products)): ?>
-        <p>Nuk ka produkte akoma.</p>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>Nuk ka produkte akoma.</p>
         <?php endif; ?>
     </div>
 </section>
